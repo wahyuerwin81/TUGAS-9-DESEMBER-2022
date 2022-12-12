@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+         function Hitung(dat1,dat2,dat3,dat4){
+                var total,totalrat;
+                total = dat1+dat2+dat3+dat4;
+              
+                totalrat = total / 4;
+                return totalrat;
+            }
+        </script>
+    </head>
+    <body>
+        <div class="box">
+            <center>
+                <h2 class="h2">Aplikasi Rata-Rata Nilai Mahasiswa</h2>
+              
+        <table class="tbl1">
+            <tr>
+                <td><label>bahasa indonesia</label></td>
+                <td>=</td>
+                <td><input type="text" id="bi" placeholder="Masukan bilangan "></td>
+            </tr>
+            <tr>
+                <td><label>Bahasa inggris</label></td>
+                <td>=</td>
+                <td><input type="text" id="bing" placeholder="Masukan bilangan "></td>
+            </tr>
+            <tr>
+                <td><label>Matematika</label></td>
+                <td>=</td>
+                <td><input type="text" id="mtk" placeholder="Masukan bilangan "></td>
+            </tr>
+            <tr>
+                <td><label>ilmu pengetahuan alam</label></td>
+                <td>=</td>
+                <td><input type="text" id="ipa" placeholder="Masukan bilangan "></td>
+            </tr>
+           
+            </tr>
+            <tr>
+                <td><label>Rata-Rata</label></td>
+                <td>=</td>
+                <td><label id="rata_rata"></label></td>
+            </tr>
+        </table>
+  <br>
+  <input type="button" id="btn" value="Rata-Rata" class="btn" onClick="Ratarata()">
+            </center>
+        </div>
+      <script>
+          function InputData(Bilangan){
+            var data;
+              data = parseFloat(document.getElementById(Bilangan).value);
+            return data;
+          }
+        
+          function Output(data){
+              document.getElementById("rata_rata").innerHTML = data;
+          }
+        
+          function Ratarata(){
+            //Deklarasi Variable
+            var dat1,dat2,dat3,dat4,ratarata;
+            //Input
+            dat1  = InputData("bi");
+            dat2  = InputData("bing");
+            dat3  = InputData("mtk");
+            dat4  = InputData("ipa");
+            
+            //Proses
+            ratarata = Hitung(dat1,dat2,dat3,dat4);
+            //OutPut
+            Output(ratarata);
+          }
+    
+    </script>
+</body>
+</html>
